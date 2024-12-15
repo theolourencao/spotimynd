@@ -1,0 +1,1 @@
+## Ponto importante! você deve ter na sua máquina o python 3.11

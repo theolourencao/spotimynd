@@ -19,5 +19,3 @@ playlists = sp.current_user_playlists()
 with open("exported_files/playlists.json", "w") as file:
     json.dump(playlists, file)
 
-for playlist in playlists['items']:
-    print(f"Playlist: {playlist['name']}")

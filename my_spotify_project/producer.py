@@ -6,6 +6,11 @@ def load_playlists(file_path):
     with open(file_path) as file:
         return json.load(file)
     
+def load_credentials(credentials_path):
+    """Getting just de API address"""
+    with open(credentials_path) as file:
+        return json.load(file)
+    
 
 def send_to_kafka(playlists, topic = 'playlists', bootstrap_servers='localhost:9092'):
     """_summary_
@@ -28,5 +33,9 @@ def send_to_kafka(playlists, topic = 'playlists', bootstrap_servers='localhost:9
     print("Data successfuly sent to Kafka!")
 
 if __name__ == '__main__':
-    playlists_data = load_playlists('exported_files/playlists.json')
+    playlists_data = load_playlists('playlists.json')
     send_to_kafka(playlists_data)
+    credentials_path = 'credentials.json'
+    load_credentials(credentials_path)
+    print(credentials_path)
+
